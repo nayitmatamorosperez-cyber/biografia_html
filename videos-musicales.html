@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Videos Musicales</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            color: #222;
+        }
+
+        /* =========================
+           BARRA LATERAL
+        ========================= */
+
+        aside {
+            width: 260px;
+            background-color: #202020;
+            color: white;
+            padding: 30px 20px;
+            position: fixed;
+            height: 100vh;
+            left: 0;
+            top: 0;
+        }
+
+        .perfil-lateral {
+            text-align: center;
+        }
+
+        .perfil-lateral img {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid white;
+        }
+
+        .perfil-lateral h2 {
+            margin-top: 15px;
+            color: white;
+        }
+
+        .perfil-lateral p {
+            color: #bbbbbb;
+            font-size: 14px;
+        }
+
+        /* =========================
+           MENÚ
+        ========================= */
+
+        .menu {
+            margin-top: 35px;
+        }
+
+        .menu a {
+            display: block;
+            text-decoration: none;
+            color: white;
+            padding: 15px;
+            margin-bottom: 8px;
+            border-radius: 8px;
+            transition: 0.3s;
+        }
+
+        .menu a:hover {
+            background-color: #444;
+        }
+
+        /* =========================
+           CONTENIDO
+        ========================= */
+
+        .contenido {
+            margin-left: 260px;
+            width: calc(100% - 260px);
+            padding: 40px;
+        }
+
+        /* =========================
+           ENCABEZADO
+        ========================= */
+
+        .encabezado {
+            background-color: #202020;
+            color: white;
+            padding: 45px;
+            border-radius: 15px;
+            margin-bottom: 35px;
+            text-align: center;
+        }
+
+        .encabezado h1 {
+            font-size: 42px;
+            margin: 0 0 15px 0;
+        }
+
+        .encabezado p {
+            color: #bbbbbb;
+            font-size: 18px;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        /* =========================
+           SECCIÓN INTRODUCCIÓN
+        ========================= */
+
+        .introduccion {
+            background-color: white;
+            padding: 30px;
+            border-radius: 12px;
+            margin-bottom: 35px;
+            border-left: 6px solid #202020;
+        }
+
+        .introduccion h2 {
+            color: #444;
+            margin-top: 0;
+        }
+
+        .introduccion p {
+            line-height: 1.7;
+            color: #555;
+        }
+
+        /* =========================
+           CONTENEDOR DE VIDEOS
+        ========================= */
+
+        .videos {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        /* =========================
+           TARJETAS
+        ========================= */
+
+        .tarjeta-video {
+            background-color: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            transition: 0.3s;
+        }
+
+        .tarjeta-video:hover {
+            transform: translateY(-5px);
+        }
+
+        /* =========================
+           CABECERA DE TARJETA
+        ========================= */
+
+        .titulo-video {
+            background-color: #444;
+            color: white;
+            padding: 18px;
+        }
+
+        .titulo-video h2 {
+            margin: 0;
+            font-size: 21px;
+        }
+
+        /* =========================
+           VIDEO YOUTUBE
+        ========================= */
+
+        .contenedor-iframe {
+            background-color: #202020;
+            padding: 15px;
+        }
+
+        iframe {
+            width: 100%;
+            height: 260px;
+            border: 0;
+            border-radius: 8px;
+            display: block;
+        }
+
+        /* =========================
+           DESCRIPCIÓN
+        ========================= */
+
+        .descripcion {
+            padding: 20px;
+        }
+
+        .descripcion p {
+            margin: 0;
+            color: #555;
+            line-height: 1.6;
+        }
+
+        /* =========================
+           SECCIÓN FINAL
+        ========================= */
+
+        .final {
+            margin-top: 40px;
+            background-color: #eeeeee;
+            padding: 30px;
+            border-radius: 12px;
+            text-align: center;
+        }
+
+        .final h2 {
+            color: #202020;
+            margin-top: 0;
+        }
+
+        .final p {
+            color: #555;
+            line-height: 1.7;
+        }
+
+        /* =========================
+           PIE DE PÁGINA
+        ========================= */
+
+        footer {
+            margin-top: 40px;
+            padding: 25px;
+            background-color: #202020;
+            color: white;
+            text-align: center;
+        }
+
+        /* =========================
+           DISEÑO RESPONSIVO
+        ========================= */
+
+        @media (max-width: 900px) {
+
+            aside {
+                position: relative;
+                width: 100%;
+                height: auto;
+            }
+
+            .contenido {
+                margin-left: 0;
+                width: 100%;
+                padding: 25px;
+            }
+
+            .videos {
+                grid-template-columns: 1fr;
+            }
+
+        }
+
+        @media (max-width: 600px) {
+
+            .encabezado h1 {
+                font-size: 32px;
+            }
+
+            .encabezado {
+                padding: 30px 20px;
+            }
+
+            iframe {
+                height: 220px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================
+         BARRA LATERAL
+    ========================= -->
+
+    <aside>
+
+        <div class="perfil-lateral">
+
+            <img src="aldair.jpeg" alt="Foto personal">
+
+            <h2>Aldair Matamoros</h2>
+
+            <p>Mi página personal</p>
+
+        </div>
+
+
+        <nav class="menu">
+
+            <a href="bIOGLAFIA.HTML">
+                🏠 Biografía
+            </a>
+
+            <a href="presentacion.html">
+                👤 Presentación
+            </a>
+
+            <a href="videos-musicales.html">
+                🎵 Videos Musicales
+            </a>
+
+        </nav>
+
+    </aside>
+
+
+    <!-- =========================
+         CONTENIDO PRINCIPAL
+    ========================= -->
+
+    <main class="contenido">
+
+
+        <!-- ENCABEZADO -->
+
+        <header class="encabezado">
+
+            <h1>🎵 Videos Musicales</h1>
+
+            <p>
+                Una colección de algunos videos musicales
+                que forman parte de mis gustos y preferencias.
+            </p>
+
+        </header>
+
+
+        <!-- INTRODUCCIÓN -->
+
+        <section class="introduccion">
+
+            <h2>Mi selección musical</h2>
+
+            <p>
+                En esta sección he seleccionado cuatro videos
+                musicales para compartir diferentes canciones
+                y estilos. La música es una forma de expresión
+                que permite transmitir emociones, recuerdos y
+                diferentes experiencias.
+            </p>
+
+        </section>
+
+
+        <!-- =========================
+             VIDEOS
+        ========================= -->
+
+        <section class="videos">
+
+
+            <!-- VIDEO 1 -->
+
+            <article class="tarjeta-video">
+
+                <div class="titulo-video">
+
+                    <h2>
+Ed Sheeran - Thinking Out Loud (Official Music Video)</h2>
+
+                </div>
+
+
+                <div class="contenedor-iframe">
+
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/lp-EO5I60KA?si=mfqoP19Twu0vQ5Hj&amp;controls=0&amp;start=3" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+
+
+                <div class="descripcion">
+
+                    <p>
+                        Una de las canciones que he seleccionado
+                        para esta página musical.
+                    </p>
+
+                </div>
+
+            </article>
+
+
+            <!-- VIDEO 2 -->
+
+            <article class="tarjeta-video">
+
+                <div class="titulo-video">
+
+                    <h2>
+Ed Sheeran - Shape of You (Official Music Video)</h2>
+
+                </div>
+
+
+                <div class="contenedor-iframe">
+
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/JGwWNGJdvx8?si=5SuoPUOk_nYH1dDJ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+                </div>
+
+
+                <div class="descripcion">
+
+                    <p>
+                        Otra canción que forma parte de mi
+                        selección de videos musicales.
+                    </p>
+
+                </div>
+
+            </article>
+
+
+            <!-- VIDEO 3 -->
+
+            <article class="tarjeta-video">
+
+                <div class="titulo-video">
+
+                    <h2>
+Bruno Mars - That’s What I Like [Official Music Video]</h2>
+
+                </div>
+
+
+                <div class="contenedor-iframe">
+
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/PMivT7MJ41M?si=ipS83wzTGNe6pJT4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+                </div>
+
+
+                <div class="descripcion">
+
+                    <p>
+                        Una canción que he elegido por su estilo
+                        y por ser parte de mis gustos musicales.
+                    </p>
+
+                </div>
+
+            </article>
+
+
+            <!-- VIDEO 4 -->
+
+            <article class="tarjeta-video">
+
+                <div class="titulo-video">
+
+                    <h2>Bruno Mars, Anderson .Paak, Silk Sonic - Leave the Door Open [Official Video]</h2>
+
+                </div>
+
+
+                <div class="contenedor-iframe">
+
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/adLGHcj_fmA?si=n0MnskxcwTi6BcgH" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                     referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+                </div>
+
+
+                <div class="descripcion">
+
+                    <p>
+                        Este es el cuarto video musical que
+                        forma parte de mi selección.
+                    </p>
+
+                </div>
+
+            </article>
+
+
+        </section>
+
+
+        <!-- =========================
+             SECCIÓN FINAL
+        ========================= -->
+
+        <section class="final">
+
+            <h2>🎵 La música</h2>
+
+            <p>
+                La música puede acompañarnos en diferentes
+                momentos de nuestra vida. Cada persona tiene
+                sus propios gustos y canciones favoritas,
+                por eso esta selección representa una parte
+                de mis preferencias musicales.
+            </p>
+
+        </section>
+
+
+        
+
+    </main>
+
+
+</body>
+
+</html>

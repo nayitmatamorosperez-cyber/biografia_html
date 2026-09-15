@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Mi Presentación</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            color: #222;
+        }
+
+        /* =========================
+           BARRA LATERAL
+        ========================= */
+
+        aside {
+            width: 260px;
+            background-color: #202020;
+            color: white;
+            padding: 30px 20px;
+            position: fixed;
+            height: 100vh;
+            left: 0;
+            top: 0;
+        }
+
+        .perfil-lateral {
+            text-align: center;
+        }
+
+        .perfil-lateral img {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid white;
+        }
+
+        .perfil-lateral h2 {
+            margin-top: 15px;
+            color: white;
+        }
+
+        .perfil-lateral p {
+            color: #bbbbbb;
+            font-size: 14px;
+        }
+
+        /* =========================
+           MENÚ
+        ========================= */
+
+        .menu {
+            margin-top: 35px;
+        }
+
+        .menu a {
+            display: block;
+            text-decoration: none;
+            color: white;
+            padding: 15px;
+            margin-bottom: 8px;
+            border-radius: 8px;
+            transition: 0.3s;
+        }
+
+        .menu a:hover {
+            background-color: #444;
+        }
+
+        /* =========================
+           CONTENIDO
+        ========================= */
+
+        .contenido {
+            margin-left: 260px;
+            width: calc(100% - 260px);
+            padding: 45px;
+        }
+
+        /* =========================
+           ENCABEZADO DIFERENTE
+        ========================= */
+
+        .encabezado-video {
+            background-color: #202020;
+            color: white;
+            padding: 45px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+        }
+
+        .encabezado-video h1 {
+            font-size: 42px;
+            margin-top: 0;
+            margin-bottom: 15px;
+        }
+
+        .encabezado-video p {
+            color: #bbbbbb;
+            font-size: 18px;
+            line-height: 1.7;
+        }
+
+        /* =========================
+           CONTENEDOR DEL VIDEO
+        ========================= */
+
+        .video-principal {
+            background-color: white;
+            padding: 35px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+        }
+
+        .video-principal h2 {
+            color: #202020;
+            margin-top: 0;
+            font-size: 28px;
+        }
+
+        .video-principal p {
+            color: #555;
+            line-height: 1.7;
+        }
+
+        /* =========================
+           VIDEO
+        ========================= */
+
+        .video {
+            background-color: #202020;
+            padding: 20px;
+            border-radius: 15px;
+            margin-top: 25px;
+            text-align: center;
+        }
+
+        video {
+            width: 100%;
+            max-width: 850px;
+            display: block;
+            margin: auto;
+            border-radius: 10px;
+            border: 4px solid #444;
+        }
+
+        /* =========================
+           INFORMACIÓN DEL VIDEO
+        ========================= */
+
+        .informacion-video {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+            margin-bottom: 30px;
+        }
+
+        .tarjeta {
+            background-color: white;
+            padding: 30px;
+            border-radius: 12px;
+        }
+
+        .tarjeta h2 {
+            color: #202020;
+            margin-top: 0;
+        }
+
+        .tarjeta h3 {
+            color: #555;
+        }
+
+        .tarjeta p {
+            line-height: 1.7;
+        }
+
+        /* =========================
+           LISTA
+        ========================= */
+
+        ul {
+            line-height: 2;
+            padding-left: 25px;
+        }
+
+        /* =========================
+           FRASE FINAL
+        ========================= */
+
+        .frase {
+            background-color: #eeeeee;
+            border-left: 7px solid #202020;
+            padding: 25px;
+            margin-top: 25px;
+            border-radius: 8px;
+        }
+
+        .frase p {
+            margin: 0;
+            font-size: 17px;
+            color: #444;
+            line-height: 1.7;
+        }
+
+        /* =========================
+           PIE
+        ========================= */
+
+        footer {
+            margin-top: 40px;
+            padding: 25px;
+            background-color: #202020;
+            color: white;
+            text-align: center;
+        }
+
+        /* =========================
+           CELULAR
+        ========================= */
+
+        @media (max-width: 800px) {
+
+            aside {
+                position: relative;
+                width: 100%;
+                height: auto;
+            }
+
+            .contenido {
+                margin-left: 0;
+                width: 100%;
+                padding: 25px;
+            }
+
+            .informacion-video {
+                grid-template-columns: 1fr;
+            }
+
+            .encabezado-video h1 {
+                font-size: 32px;
+            }
+
+            video {
+                width: 100%;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================
+         BARRA LATERAL
+    ========================= -->
+
+    <aside>
+
+        <div class="perfil-lateral">
+
+            <img src="aldair.jpeg" alt="Foto personal">
+
+            <h2>Aldair Matamoros</h2>
+
+            <p>Mi página personal</p>
+
+        </div>
+
+
+        <nav class="menu">
+
+            <a href="bIOGLAFIA.HTML">
+                🏠 Biografía
+            </a>
+
+            <a href="presentacion.html">
+                👤 Presentación
+            </a>
+
+            <a href="videos-musicales.html">
+                🎵 Videos Musicales
+            </a>
+
+        </nav>
+
+    </aside>
+
+
+    <!-- =========================
+         CONTENIDO PRINCIPAL
+    ========================= -->
+
+    <main class="contenido">
+
+
+        <!-- ENCABEZADO -->
+
+        <section class="encabezado-video">
+
+            <h1>Mi Presentación</h1>
+
+            <p>
+                En esta sección podrás conocer un poco más
+                sobre mí a través de mi video de presentación
+                personal.
+            </p>
+
+        </section>
+
+
+        <!-- VIDEO PRINCIPAL -->
+
+        <section class="video-principal">
+
+            <h2>🎥 Mi video de presentación</h2>
+
+
+            <div class="video">
+
+                <video controls width="100" style="max-width: 30%; height: auto; border-radius: 10px;">
+                <source src="aldairvideo.mp4" type="video/mp4">
+                Tu navegador no soporta la reproducción de videos.
+            </video>
+
+            </div>
+
+        </section>
+
+
+        <!-- INFORMACIÓN -->
+
+        <section class="informacion-video">
+
+
+            <!-- TARJETA 1 -->
+
+            <article class="tarjeta">
+
+                <h2>📋 Sobre mi presentación</h2>
+
+                <p>
+                    En este video presento mi información personal y académica. Explico detalles sobre mi origen, 
+                    mi lugar de residencia actual y los avances en mis estudios en la carrera de Tecnologías de la Información..
+                </p>
+
+            </article>
+
+
+            <!-- TARJETA 2 -->
+
+            <article class="tarjeta">
+
+                <h2>🎯 Mis objetivos</h2>
+
+                <p>
+                    Uno de mis principales objetivos es
+                    continuar desarrollando mis conocimientos
+                    y habilidades para alcanzar mis metas
+                    personales y profesionales.
+                </p>
+
+            </article>
+
+
+        </section>
+
+
+        <!-- TEMAS -->
+
+        <section class="tarjeta">
+
+            <h2>📚 Temas de mi presentación</h2>
+
+            <ul>
+
+                <li>
+                    Datos personales y nombre completo    
+            </li>
+
+                <li>
+                    Edad y lugar de origen.
+                </li>
+
+                <li>
+                    Ciudad de residencia actual.
+                </li>
+
+                <li>
+                    Carrera universitaria y semestre actual.
+                </li>
+
+                <li>
+                    Universidad y sede donde estudio.
+                </li>
+
+            </ul>
+
+
+            <div class="frase">
+
+                <p>
+                    Este video forma parte de mi página web
+                    personal y permite conocerme un poco
+                    mejor.
+                </p>
+
+            </div>
+
+        </section>
+
+
+
+    </main>
+
+
+</body>
+
+</html>
